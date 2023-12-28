@@ -1,7 +1,15 @@
-<form class="form-group container" autocomplete="off">
+<form class="form-group container" (ngSubmit)="agregar(templateForm)" #templateForm="ngForm">
     <div>
         <label for="proyecto">Proyecto</label>
-        <input class="form-control" type="text" id="proyecto" autocomplete="off" placeholder="Nombre del proyecto">
+        <input 
+            class="form-control" 
+            type="text" 
+            id="proyecto" 
+            autocomplete="off" 
+            placeholder="Nombre del proyecto"
+            ngModel
+            name="proyecto"
+        />
     </div>
     <div>
         <label for="horas">Horas</label>

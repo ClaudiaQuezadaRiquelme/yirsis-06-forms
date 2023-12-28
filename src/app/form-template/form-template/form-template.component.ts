@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class FormTemplateComponent {
 
+  agregar(form: any) {
+    console.log('Enviado:',form);
+    
+  }
 }
