@@ -1,4 +1,4 @@
-<form class="form-group container" (ngSubmit)="agregar(templateForm)" #templateForm="ngForm">
+<form class="form-group container" (ngSubmit)="agregar()" #templateForm="ngForm">
     <div>
         <label for="proyecto">Proyecto</label>
         <input 
@@ -30,3 +30,9 @@
         <button class="btn btn-warning mt-2 w-100" type="submit">Agregar Proyecto</button>
     </div>
 </form>
+
+<pre>
+    Proyecto: {{
+        templateForm.value | json
+    }}
+</pre>

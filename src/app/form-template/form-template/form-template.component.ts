@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form-template',
@@ -7,8 +8,11 @@ import { Component } from '@angular/core';
 })
 export class FormTemplateComponent {
 
-  agregar(form: any) {
-    console.log('Enviado:',form);
+  @ViewChild("templateForm")
+  templateForm!: NgForm;
+
+  agregar() {
+    console.log('templateForm:', this.templateForm.value);
     
   }
 }
