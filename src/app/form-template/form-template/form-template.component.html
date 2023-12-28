@@ -1,7 +1,7 @@
 <form class="form-group container" autocomplete="off">
     <div>
         <label for="proyecto">Proyecto</label>
-        <input class="form-control" type="text" id="proyecto" placeholder="Nombre del proyecto">
+        <input class="form-control" type="text" id="proyecto" autocomplete="off" placeholder="Nombre del proyecto">
     </div>
     <div>
         <label for="horas">Horas</label>
@@ -9,7 +9,14 @@
     </div>
     <div>
         <label for="tecnologias">Tecnologías</label>
-        <input class="form-control" type="text" id="tecnologias" placeholder="Nombre de la tecnología">
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <input class="form-control" type="text" id="tecnologias" autocomplete="off" placeholder="Nombre de la tecnología">
+            </div>
+            <div class="col-12 col-md-4">
+                <button class="btn btn-success">Agregar tecnología</button>
+            </div>
+        </div>
     </div>
     <div>
         <button class="btn btn-warning mt-2 w-100" type="submit">Agregar Proyecto</button>
