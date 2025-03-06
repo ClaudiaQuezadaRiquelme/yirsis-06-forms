@@ -12,7 +12,7 @@ export class FormTemplateComponent {
   templateForm!: NgForm;
 
   agregar() {
-    console.log('templateForm:', this.templateForm.value);
+    console.log('templateForm:', this.templateForm);
     
   }
 }

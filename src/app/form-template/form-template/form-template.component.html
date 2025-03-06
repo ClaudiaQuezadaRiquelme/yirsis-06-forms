@@ -9,6 +9,9 @@
             placeholder="Nombre del proyecto"
             ngModel
             name="proyecto"
+            minlength="3"
+            maxlength="15"
+            required
         />
     </div>
     <div>
@@ -19,7 +22,12 @@
         <label for="tecnologias">Tecnologías</label>
         <div class="row">
             <div class="col-12 col-md-8">
-                <input class="form-control" type="text" id="tecnologias" autocomplete="off" placeholder="Nombre de la tecnología">
+                <input 
+                    class="form-control" 
+                    type="text" id="tecnologias" 
+                    autocomplete="off" 
+                    placeholder="Nombre de la tecnología"
+                >
             </div>
             <div class="col-12 col-md-4">
                 <button class="btn btn-success">Agregar tecnología</button>
@@ -32,7 +40,7 @@
 </form>
 
 <pre>
-    Proyecto: {{
-        templateForm.value | json
-    }}
+    Proyecto: {{ templateForm.value | json }}
+    Válido: {{ templateForm.valid }}
+    Errores: {{ templateForm.controls["proyecto"]?.errors | json }}
 </pre>
