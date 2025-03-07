@@ -35,17 +35,26 @@
     <div>
         <label for="tecnologias">Tecnologías</label>
         <div class="row">
-            <div class="col-12 col-md-8">
+            <div class="col-8">
                 <input 
                     class="form-control" 
                     type="text" 
                     id="tecnologias" 
                     autocomplete="off" 
                     placeholder="Nombre de la tecnología"
+                    ngModel
+                    name="tecnologia"
+                    required
+                    minlength="3"
+                    maxlength="15"
                 >
             </div>
-            <div class="col-12 col-md-4">
-                <button class="btn btn-success">Agregar tecnología</button>
+            <div class="col-4">
+                <button 
+                    class="btn btn-success" 
+                    type="button"
+                    (click)="agregarTec()"
+                >Agregar tecnología</button>
             </div>
         </div>
     </div>
