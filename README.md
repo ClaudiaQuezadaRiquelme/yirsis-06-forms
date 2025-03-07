@@ -11,4 +11,4 @@ This project comes from [Angular desde cero](https://www.udemy.com/course/angula
 ## You can find in this project:
 
 - [Bootstrap 5](https://getbootstrap.com/)
-- 
+- [Bootstrap Icons](https://icons.getbootstrap.com/)

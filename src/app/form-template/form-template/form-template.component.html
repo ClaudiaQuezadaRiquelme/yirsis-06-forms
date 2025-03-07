@@ -1,9 +1,8 @@
-<div **ngIf="templateForm.controls['proyecto']?.errors" class="alert alert-danger d-flex align-items-center" role="alert">
-    <i class="bi bi-exclamation-triangle-fill"></i>
-    <div>Error: Formulario inválido.</div>
-</div>
-
 <form class="form-group container" (ngSubmit)="agregar()" #templateForm="ngForm">
+    <div *ngIf="templateForm.invalid && templateForm.touched" class="alert alert-danger d-flex align-items-center" role="alert">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <div>Error: Formulario inválido.</div>
+    </div>
     <div>
         <label for="proyecto">Proyecto</label>
         <input 
@@ -21,7 +20,17 @@
     </div>
     <div>
         <label for="horas">Horas</label>
-        <input class="form-control" type="text" id="horas" placeholder="Horas para completar">
+        <input 
+            class="form-control" 
+            type="number" 
+            id="horas" 
+            placeholder="Horas para completar"
+            ngModel
+            name="horas"
+            required
+            min="0"
+            max="25"
+        >
     </div>
     <div>
         <label for="tecnologias">Tecnologías</label>
@@ -29,7 +38,8 @@
             <div class="col-12 col-md-8">
                 <input 
                     class="form-control" 
-                    type="text" id="tecnologias" 
+                    type="text" 
+                    id="tecnologias" 
                     autocomplete="off" 
                     placeholder="Nombre de la tecnología"
                 >
@@ -45,7 +55,9 @@
 </form>
 
 <pre>
+    Touched: {{ templateForm.touched }}
     Proyecto: {{ templateForm.value | json }}
     Válido: {{ templateForm.valid }}
-    Errores: {{ templateForm.controls["proyecto"]?.errors | json }}
+    Nombre: {{ templateForm.controls["proyecto"]?.errors | json }}
+    Horas: {{ templateForm.controls["horas"]?.errors | json }}
 </pre>
