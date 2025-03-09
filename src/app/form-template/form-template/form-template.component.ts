@@ -30,5 +30,9 @@ export class FormTemplateComponent {
     }
     this.tecnologias.push(this.templateForm.controls['tecnologia'].value);
     console.log('tecnologias:', this.tecnologias);
+    this.templateForm.resetForm({
+      ...this.templateForm.value, // operador spread
+      tecnologia: ''
+    });
   }
 }
