@@ -11,7 +11,7 @@
             id="proyecto" 
             autocomplete="off" 
             placeholder="Nombre del proyecto"
-            ngModel
+            [(ngModel)]="initialState.proyecto"
             name="proyecto"
             minlength="3"
             maxlength="15"
@@ -25,7 +25,7 @@
             type="number" 
             id="horas" 
             placeholder="Horas para completar"
-            ngModel
+            [(ngModel)]="initialState.horas"
             name="horas"
             required
             min="0"
@@ -42,7 +42,7 @@
                     id="tecnologias" 
                     autocomplete="off" 
                     placeholder="Nombre de la tecnología"
-                    ngModel
+                    [(ngModel)]="initialState.tecnologia"
                     name="tecnologia"
                     required
                     minlength="3"
@@ -65,7 +65,7 @@
 
 <pre>
     Touched: {{ templateForm.touched }}
-    Proyecto: {{ templateForm.value | json }}
+    Proyecto: {{ initialState | json }}
     Válido: {{ templateForm.valid }}
     Nombre: {{ templateForm.controls["proyecto"]?.errors | json }}
     Horas: {{ templateForm.controls["horas"]?.errors | json }}
