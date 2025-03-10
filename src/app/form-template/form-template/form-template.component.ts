@@ -15,13 +15,25 @@ export class FormTemplateComponent {
   };
 
   tecnologias:Array<string> = [];
+  proyectos: any[] = [];
 
   @ViewChild("templateForm")
   templateForm!: NgForm;
 
   agregar() {
-    console.log('templateForm:', this.templateForm);
-    
+    if (this.templateForm.invalid) {
+      return;
+    }
+    this.proyectos.push({
+      proyecto: this.templateForm.controls['proyecto'].value,
+      tecnologias: this.tecnologias,
+      horas: this.templateForm.controls['horas'].value
+    });
+    this.templateForm.resetForm({
+      horas: 0
+    });
+    this.tecnologias = [];
+    console.log('this.proyectos:', this.proyectos);
   }
 
   agregarTec() {

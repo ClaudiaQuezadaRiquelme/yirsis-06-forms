@@ -55,6 +55,12 @@
                     (click)="agregarTec()"
                 >Agregar tecnología</button>
             </div>
+            <div class="col-12 my-2">
+                <ul class="list-group list-group-horizontal">
+                    <li *ngFor="let item of tecnologias"
+                        class="list-group-item">{{item}}</li>
+                </ul>
+            </div>
         </div>
     </div>
     <div>
@@ -64,8 +70,6 @@
 
 <pre>
     Touched: {{ templateForm.touched }}
-    Proyecto: {{ initialState | json }}
     Válido: {{ templateForm.valid }}
-    Nombre: {{ templateForm.controls["proyecto"]?.errors | json }}
-    Horas: {{ templateForm.controls["horas"]?.errors | json }}
+    Proyectos: {{ proyectos | json }}
 </pre>
