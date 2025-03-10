@@ -68,8 +68,27 @@
     </div>
 </form>
 
-<pre>
+<!-- <pre>
     Touched: {{ templateForm.touched }}
     Válido: {{ templateForm.valid }}
     Proyectos: {{ proyectos | json }}
-</pre>
+</pre> -->
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Proyecto</th>
+                <th scope="col">Horas</th>
+                <th scope="col">Tecnologías</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of proyectos">
+                <th scope="row">{{item.proyecto}}</th>
+                <td>{{item.horas}}</td>
+                <td>{{item.tecnologias}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
