@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-reactive',
@@ -7,9 +7,19 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./form-reactive.component.css']
 })
 export class FormReactiveComponent {
-  reactiveForm: FormGroup = new FormGroup({
-    proyecto: new FormControl(''),
-    horas: new FormControl(0),
-    tecnologia: new FormControl('')
+  // reactiveForm: FormGroup = new FormGroup({
+  //   proyecto: new FormControl(''),
+  //   horas: new FormControl(0),
+  //   tecnologia: new FormControl('')
+  // });
+
+  reactiveForm: FormGroup = this.fb.group({
+    proyecto: this.fb.control(''),
+    horas: this.fb.control(0),
+    tecnologia: this.fb.control('')
   });
+
+  constructor(
+    private fb: FormBuilder
+  ) {}
 }

@@ -2,11 +2,11 @@
 <form [formGroup]="reactiveForm" class="form-group container" autocomplete="off">
     <div>
         <label for="proyectoR">Proyecto</label>
-        <input class="form-control" type="text" id="proyectoR" placeholder="Nombre del proyecto">
+        <input formControlName="proyecto" class="form-control" type="text" id="proyectoR" placeholder="Nombre del proyecto">
     </div>
     <div>
         <label for="horasR">Horas</label>
-        <input class="form-control" type="text" id="horasR" placeholder="Horas para completar">
+        <input formControlName="horas" class="form-control" type="text" id="horasR" placeholder="Horas para completar">
     </div>
     <div>
         <label for="tecnologiasR">Tecnologías</label>
@@ -18,6 +18,7 @@
                     id="tecnologiasR" 
                     autocomplete="off" 
                     placeholder="Nombre de la tecnología"
+                    formControlName="tecnologia"
                 >
             </div>
             <div class="col-4">
