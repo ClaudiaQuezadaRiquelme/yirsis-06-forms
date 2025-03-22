@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-reactive',
@@ -14,8 +14,16 @@ export class FormReactiveComponent {
   // });
 
   reactiveForm: FormGroup = this.fb.group({
-    proyecto: this.fb.control(''),
-    horas: this.fb.control(0),
+    proyecto: this.fb.control('', [
+      Validators.required, 
+      Validators.minLength(3), 
+      Validators.maxLength(15), // invalida el form pero no impide que se siga escribiendo
+    ]),
+    horas: this.fb.control(0, [
+      Validators.required, 
+      Validators.min(0), 
+      Validators.max(50), // invalida el form pero no impide que se siga escribiendo
+    ]),
     tecnologia: this.fb.control('')
   });
 

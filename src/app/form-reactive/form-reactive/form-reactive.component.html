@@ -1,8 +1,23 @@
 
 <form [formGroup]="reactiveForm" class="form-group container" autocomplete="off">
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <div>Error: Formulario inválido.</div>
+    </div>
+    <pre>
+        Formulario inválido: {{reactiveForm.invalid}}
+    </pre>
     <div>
         <label for="proyectoR">Proyecto</label>
-        <input formControlName="proyecto" class="form-control" type="text" id="proyectoR" placeholder="Nombre del proyecto">
+        <input 
+            formControlName="proyecto" 
+            class="form-control" 
+            type="text" 
+            id="proyectoR" 
+            placeholder="Nombre del proyecto"
+            maxlength="15"
+        > <!-- maxlength impide que siga escribiendo, pero tiene html problemas de seguridad -->
+    
     </div>
     <div>
         <label for="horasR">Horas</label>
