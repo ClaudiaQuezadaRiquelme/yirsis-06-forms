@@ -24,14 +24,14 @@ export class FormReactiveComponent {
       Validators.min(0), 
       Validators.max(50), // invalida el form pero no impide que se siga escribiendo
     ]),
-    tecnologia: this.fb.array([]),
+    tecnologias: this.fb.array([]),
   });
   tecnologia: FormControl = this.fb.control('', [
     Validators.required, Validators.minLength(3), Validators.maxLength(20)
   ]);
 
   get tecnologias() {
-    return this.reactiveForm.get('tecnologia') as FormArray;
+    return this.reactiveForm.get('tecnologias') as FormArray;
   }
 
   proyectos: any[] = [];
@@ -60,5 +60,7 @@ export class FormReactiveComponent {
       return;
     }
     this.proyectos.push(this.reactiveForm.value);
+    this.reactiveForm.reset();
+    this.tecnologias.clear();
   }
 }
