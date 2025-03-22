@@ -30,4 +30,8 @@ export class FormReactiveComponent {
   constructor(
     private fb: FormBuilder
   ) {}
+
+  validar() {
+    return this.reactiveForm.invalid && this.reactiveForm.touched;
+  }
 }

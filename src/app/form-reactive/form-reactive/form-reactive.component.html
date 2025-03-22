@@ -1,6 +1,6 @@
 
 <form [formGroup]="reactiveForm" class="form-group container" autocomplete="off">
-    <div class="alert alert-danger d-flex align-items-center" role="alert">
+    <div *ngIf="validar()" class="alert alert-danger d-flex align-items-center" role="alert">
         <i class="bi bi-exclamation-triangle-fill"></i>
         <div>Error: Formulario inválido.</div>
     </div>
