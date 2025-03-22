@@ -26,6 +26,9 @@ export class FormReactiveComponent {
     ]),
     tecnologia: this.fb.control('')
   });
+  tecnologia: FormControl = this.fb.control('', [
+    Validators.required, Validators.minLength(3), Validators.maxLength(20)
+  ]);
 
   constructor(
     private fb: FormBuilder
