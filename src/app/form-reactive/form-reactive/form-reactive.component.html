@@ -1,5 +1,5 @@
 
-<form [formGroup]="reactiveForm" class="form-group container" autocomplete="off">
+<form [formGroup]="reactiveForm" (ngSubmit)="agregarProyecto()" class="form-group container" autocomplete="off">
     <div *ngIf="validar()" class="alert alert-danger d-flex align-items-center" role="alert">
         <i class="bi bi-exclamation-triangle-fill"></i>
         <div>Error: Formulario inválido.</div>
@@ -64,12 +64,12 @@
                 <th scope="col">Tecnologías</th>
             </tr>
         </thead>
-        <!-- <tbody>
+        <tbody>
             <tr *ngFor="let item of proyectos">
                 <th scope="row">{{item.proyecto}}</th>
                 <td>{{item.horas}}</td>
-                <td>{{item.tecnologias}}</td>
+                <td>{{item.tecnologia}}</td>
             </tr>
-        </tbody> -->
+        </tbody>
     </table>
 </div>

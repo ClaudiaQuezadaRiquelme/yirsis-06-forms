@@ -34,6 +34,8 @@ export class FormReactiveComponent {
     return this.reactiveForm.get('tecnologia') as FormArray;
   }
 
+  proyectos: any[] = [];
+
   constructor(
     private fb: FormBuilder
   ) {}
@@ -50,5 +52,13 @@ export class FormReactiveComponent {
     this.tecnologias.push(this.fb.control(this.tecnologia.value));
     console.log('this.tecnologias.value:' ,this.tecnologias.value);
     this.tecnologia.reset(); // limpiar input de tecnologia
+  }
+
+  agregarProyecto() {
+    if (this.reactiveForm.invalid) {
+      this.reactiveForm.markAllAsTouched(); // fuerza a que aparezca un error en el form
+      return;
+    }
+    this.proyectos.push(this.reactiveForm.value);
   }
 }
