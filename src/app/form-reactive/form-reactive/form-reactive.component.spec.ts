@@ -24,4 +24,18 @@ describe('FormReactiveComponent', () => {
     expect(hours).toBeTruthy();
     expect(tech).toBeTruthy();
   });
+
+  it('should verify proyecto accept 3+ characters.', () => {
+    const form = component.reactiveForm;
+    const project = form.get('proyecto');
+    project?.setValue("abc");
+    expect(project?.valid).toBeTruthy();
+  });
+
+  it('should verify proyecto accept max 15 characters.', () => {
+    const form = component.reactiveForm;
+    const project = form.get('proyecto');
+    project?.setValue("asdfghjklqwertyuiopzxcvbnm");
+    expect(project?.valid).toBeFalsy();
+  });
 });
