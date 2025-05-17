@@ -62,4 +62,21 @@ describe('FormReactiveComponent', () => {
     expect(techsArr?.value.length).toBe(2);
     expect(techsArr?.value).toEqual(['Node','Angular']);
   });
+
+  it('should add a project', () => {
+    const form = component.reactiveForm;
+    const project = form.get('proyecto');
+    const hours = form.get('horas');
+    const techCtrl = component.tecnologia;
+
+    project?.setValue('Blog');
+    hours?.setValue(4);
+    techCtrl.setValue('Node');
+    component.agregarTecnologia();
+    techCtrl.setValue('Angular');
+    component.agregarTecnologia();
+    component.agregarProyecto();
+
+    expect(component.proyectos.length).toBe(1);
+  });
 });
