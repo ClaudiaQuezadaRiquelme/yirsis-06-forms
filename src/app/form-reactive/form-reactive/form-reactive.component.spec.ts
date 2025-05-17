@@ -8,17 +8,20 @@ describe('FormReactiveComponent', () => {
   let fixture: ComponentFixture<FormReactiveComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [FormReactiveComponent],
-      imports: [ReactiveFormsModule],
-      providers: [FormBuilder]
-    });
-    fixture = TestBed.createComponent(FormReactiveComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new FormReactiveComponent(new FormBuilder());
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should create a form with 3 inputs: proyecto, horas, tecnologias.', () => {
+    const form = component.reactiveForm;
+    const project = form.get('proyecto');
+    const hours = form.get('horas');
+    const tech = form.get('tecnologias');
+    expect(project).toBeTruthy();
+    expect(hours).toBeTruthy();
+    expect(tech).toBeTruthy();
   });
 });
