@@ -38,4 +38,16 @@ describe('FormReactiveComponent', () => {
     project?.setValue("asdfghjklqwertyuiopzxcvbnm");
     expect(project?.valid).toBeFalsy();
   });
+
+  it('should verify horas.', () => {
+    const form = component.reactiveForm;
+    const hours = form.get('horas');
+    expect(hours?.valid).toBeTruthy();
+    hours?.setValue(0);
+    expect(hours?.valid).toBeFalsy();
+    hours?.setValue(51);
+    expect(hours?.valid).toBeFalsy();
+    hours?.setValue("51");
+    expect(hours?.valid).toBeFalsy();
+  });
 });

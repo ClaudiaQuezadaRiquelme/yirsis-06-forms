@@ -19,9 +19,9 @@ export class FormReactiveComponent {
       Validators.minLength(3), 
       Validators.maxLength(15), // invalida el form pero no impide que se siga escribiendo
     ]),
-    horas: this.fb.control(0, [
+    horas: this.fb.control(1, [
       Validators.required, 
-      Validators.min(0), 
+      Validators.min(1), 
       Validators.max(50), // invalida el form pero no impide que se siga escribiendo
     ]),
     tecnologias: this.fb.array([]),
