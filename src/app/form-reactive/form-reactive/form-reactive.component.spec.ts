@@ -50,4 +50,16 @@ describe('FormReactiveComponent', () => {
     hours?.setValue("51");
     expect(hours?.valid).toBeFalsy();
   });
+
+  it('should add a element in tecnologias array', () => {
+    const techsArr = component.tecnologias; // como es un getter, no necesitamos inicializar el form y usar el get() del form.
+    const techCtrl = component.tecnologia;
+    techCtrl.setValue('Node');
+    component.agregarTecnologia();
+    expect(techsArr?.value.length).toBe(1);
+    techCtrl.setValue('Angular');
+    component.agregarTecnologia();
+    expect(techsArr?.value.length).toBe(2);
+    expect(techsArr?.value).toEqual(['Node','Angular']);
+  });
 });

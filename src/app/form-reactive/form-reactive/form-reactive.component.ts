@@ -24,7 +24,7 @@ export class FormReactiveComponent {
       Validators.min(1), 
       Validators.max(50), // invalida el form pero no impide que se siga escribiendo
     ]),
-    tecnologias: this.fb.array([]),
+    tecnologias: this.fb.array([], [Validators.required]),
   });
   tecnologia: FormControl = this.fb.control('', [
     Validators.required, Validators.minLength(3), Validators.maxLength(20)
